@@ -1,0 +1,87 @@
+/* Cyber Mode styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: black;
+    color: lime; /* Color for text and letters */
+    overflow: auto; /* Allow scrolling */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative; /* For absolute positioning of the rain effect */
+}
+
+/* Container for centering content and adjusting width */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Ensure position for rain effect */
+    z-index: 1; /* Ensure content is above rain */
+    max-width: 1200px; /* Adjust this value as needed */
+    width: 100%;
+    padding: 20px;
+}
+
+/* Styles for key grid */
+#keyGridContainer {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid lime;
+    border-radius: 10px;
+    background: black;
+    color: lime; /* Color for key grid text */
+    max-width: 100%; /* Ensure it does not exceed container width */
+}
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    margin: auto;
+    z-index: 2; /* Ensure table is above rain */
+    position: relative; /* Ensure table is above rain */
+}
+
+table td {
+    background: black;
+    color: lime; /* Color for table text */
+    border: 1px solid lime;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    text-shadow: 0 0 10px lime;
+}
+
+/* Button styles */
+button {
+    background: rgba(0, 255, 0, 0.5);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 2; /* Ensure buttons are above rain */
+}
+
+button:hover {
+    background: rgba(0, 204, 0, 0.7);
+}
+
+/* Matrix rain effect */
+.rain {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: rgba(0, 255, 0, 0.3); /* Separate color for rain effect */
+    bottom: 100%;
+    animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+    to {
+        transform: translateY(100vh);
+    }
+}
